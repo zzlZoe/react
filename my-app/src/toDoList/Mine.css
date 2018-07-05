@@ -1,0 +1,9 @@
+.NameList{
+    width: 100%;
+    height: 45px;
+    display: flex;
+}
+.NameList li {
+    flex: 1;
+    list-style: none;
+}

@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.tablist{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  border: 1px solid #ccc;
+}
+.tablist li {
+  flex: 1;
+  line-height: 45px;
+  list-style: none;
+}
