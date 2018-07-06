@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './Mine.css'
+
+import Props from '../component/Props'
+
+import Child from '../component/Child'
 class Mine extends Component {
     constructor (props) {
         super(props)
@@ -16,6 +20,12 @@ class Mine extends Component {
 
     handleClick (e) {
         console.log(this.state.message)
+    }
+
+    handleEmail (e) {
+        this.setState({
+            email: e.target.value
+        })
     }
 
     del(){
@@ -36,6 +46,13 @@ class Mine extends Component {
                         })
                     }
                 </ul>
+                {/* 父向子传值prop */}
+                <Props initValue={ 10 }></Props>
+                <hr/>
+                
+                {/* 子向父 */}
+                <Child name="email" handleEmail={ this.handleEmail.bind(this) }></Child>
+                <div>{this.state.email}</div>
             </div>
         )
     }

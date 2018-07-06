@@ -1,3 +1,5 @@
+
+
 // import React, { Component } from 'react'
 // import ReactDOM from 'react-dom'
 
@@ -35,5 +37,42 @@
 // }
 // );
 // module.exports = Props
+
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+class Props extends Component {
+   constructor (props) {
+       super(props)
+       this.state = {
+           counter: props.initValue
+       }
+       this.minus = this.minus.bind(this)
+       this.add = this.add.bind(this)
+   }
+
+// 减
+    minus (e) {
+        this.setState({
+            counter: this.state.counter - 1
+        })
+    }
+// 加
+    add (e) {
+        this.setState({
+            counter: this.state.counter + 1
+        })
+    }
+   render () {
+       return (
+            <div>
+                <button onClick={ (e) => { this.minus(e) } }>-</button>
+                <span style={{width: "50px",display: "inline-block"}}>{this.state.counter}</span>
+                <button onClick={ (e) => { this.add(e) } }>+</button>
+            </div>
+       )
+   }
+}
+
+export default Props
 
 
